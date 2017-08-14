@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Secret Word</title>
+  </head>
+  <body>
+    <header>
+      <h2>Guess Secret Word</h2>
+      <h3>{{count}} tries left</h3>
+    </header>
+    <div class="wrapper">
+      <div class="tries">
+      {{#placeholder}}
+         {{.}}
+      {{/placeholder}}
+      </div>
+      <form class="" action="/guess" method="post">
+        <input type="text" name="guess" value="{{letter}}" maxlength="1"><button type="submit" name="button">Make A Guess</button>
+      </form>
+      <h3 class="guessedLetters" name="guessedLetters">Letters Guessed: {{guess}}</h3>
+      {{#message}}
+      <h1>{{message}}</h1>
+      {{/message}}
+    </div>
+  </body>
+</html>
